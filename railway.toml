@@ -1,22 +1,13 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "Dockerfile.panel"
+dockerfilePath = "Dockerfile"
 
 [deploy]
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
 
 [env]
-XRAY_EXECUTABLE_PATH = "/usr/local/bin/xray"
-XRAY_ASSETS_PATH = "/usr/local/share/xray"
-SQLALCHEMY_DATABASE_URL = "sqlite:////code/data/db.sqlite3"
-UVICORN_HOST = "0.0.0.0"
-UVICORN_PORT = "8000"
-DEBUG = "False"
-TZ = "Asia/Tehran"
-
-SUDO_USERNAME = "admin"
-SUDO_PASSWORD = "admin123"
+PORT = "8000"
 
 [volumes]
-marzban-panel-data = "/code/data"
+data = "/app/data"
