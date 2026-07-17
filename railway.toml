@@ -1,6 +1,6 @@
 [build]
-builder = "dockercompose"
-dockerComposePath = "docker-compose.railway.yml"
+builder = "dockerfile"
+dockerfilePath = "Dockerfile.panel"
 
 [deploy]
 restartPolicyType = "ON_FAILURE"
@@ -18,16 +18,5 @@ TZ = "Asia/Tehran"
 SUDO_USERNAME = "admin"
 SUDO_PASSWORD = "admin123"
 
-SERVICE_HOST = "0.0.0.0"
-SERVICE_PORT = "62050"
-XRAY_API_PORT = "62051"
-SERVICE_PROTOCOL = "rest"
-SERVICE_TLS = "false"
-SSL_DIR = "/var/lib/marzban-node"
-
-PANEL_API_TOKEN = ""
-SSL_CLIENT_CERT = ""
-
 [volumes]
 marzban-panel-data = "/code/data"
-marzban-node-data = "/var/lib/marzban-node"
