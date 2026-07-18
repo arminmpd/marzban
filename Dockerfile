@@ -1,14 +1,16 @@
-FROM python:3.12-slim
+FROM gozargah/marzban:latest
 
-WORKDIR /app
+USER root
 
-RUN apt-get update && apt-get install -y \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+COPY entrypoint.sh /entrypoint-railway.sh
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN chmod +x /entrypoint-railway.sh \
+    && mkdir -p /var/lib/marzban
 
-COPY . .
+ENV UVICORN_HOST=0.0.0.0
+ENV UVICORN_PORT=8000
+ENV RAILWAY_RUN_UID=0
 
-CMD ["python", "-m", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+EXPOSE 8000
+
+ENTRYPOINT ["/entrypoint-railway.sh"]
