@@ -124,4 +124,4 @@ HEALTHCHECK --interval=30s --timeout=8s --start-period=90s --retries=5 \
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
 # Railway متغیر PORT را خودکار قرار می‌دهد
-CMD ["bash", "-lc", "export UVICORN_PORT=${PORT:-8000}; exec python main.py"]
+CMD ["/opt/venv/bin/python", "main.py"]
