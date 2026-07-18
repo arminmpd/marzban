@@ -1,0 +1,17 @@
+services:
+  marzban:
+    build:
+      context: .
+      args:
+        MARZBAN_REF: master
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+      - "10000:10000"
+    volumes:
+      - marzban-data:/var/lib/marzban
+    restart: unless-stopped
+
+volumes:
+  marzban-data:

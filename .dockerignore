@@ -1,0 +1,9 @@
+.git
+.github
+.env
+.env.*
+README*.md
+*.zip
+__pycache__
+*.pyc
+node_modules

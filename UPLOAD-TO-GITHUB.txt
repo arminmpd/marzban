@@ -1,0 +1,8 @@
+روش ساده آپلود بدون Git:
+
+1) فایل ZIP را باز کنید.
+2) در GitHub یک Repository جدید بسازید.
+3) روی Add file > Upload files بزنید.
+4) همه فایل‌ها و پوشه‌های داخل marzban-railway-starter را انتخاب کنید.
+5) Commit changes را بزنید.
+6) در Railway گزینه Deploy from GitHub Repo را انتخاب کنید.
